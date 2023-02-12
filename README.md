@@ -1,7 +1,7 @@
-<img src="img/111.png" width="500" height="500">
-<img src="img/222.png" width="500" height="500">
-<img src="img/3.png" width="500" height="500">
-<img src="img/4.png" width="500" height="500">
+<img src="public/readme/111.png" width="500" height="500">
+<img src="public/readme/222.png" width="500" height="500">
+<img src="public/readme/3.png" width="500" height="500">
+<img src="public/readme/4.png" width="500" height="500">
 
 ### 3.3.3. `import` vs `require`
 
