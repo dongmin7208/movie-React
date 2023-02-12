@@ -1,0 +1,69 @@
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  function App() {
+    const [top, setTop] = React.useState();
+    const [bottom, setBottom] = React.useState();
+    const [index, setIndex] = React.useState();
+    const [result, setResult] = React.useState();
+    const onSelect = (event) => {
+      setIndex(event.target.value);
+    };
+
+    const onSubmit = () => {
+      switch (index) {
+        case 'add': {
+          setResult(top + bottom);
+          break;
+        }
+      }
+      switch (index) {
+        case 'subtract': {
+          setResult(top - bottom);
+          break;
+        }
+      }
+      switch (index) {
+        case 'divide': {
+          setResult(top / bottom);
+          break;
+        }
+      }
+      switch (index) {
+        case 'multiply': {
+          setResult(top * bottom);
+          break;
+        }
+      }
+    };
+    return (
+      <div className='container'>
+        <h1>🔥 Calculator 🔥</h1>
+        <input
+          placeholder='Write a number...'
+          type='number'
+          value={top}
+          onChange={(e) => setTop(Number(e.target.value))}
+        />
+        <input
+          placeholder='And another one...'
+          type='number'
+          value={bottom}
+          onChange={(e) => setBottom(Number(e.target.value))}
+        />
+        <select placeholder='Select operation' type='text' onChange={onSelect}>
+          <option value='0'>Select operation</option>
+          <option value='add'>+</option>
+          <option value='subtract'>-</option>
+          <option value='divide'>/</option>
+          <option value='multiply'>*</option>
+        </select>
+        <button onClick={() => onSubmit()}>Calculator</button>
+        <span>The Result:{result} </span>
+      </div>
+    );
+  }
+  const root = document.getElementById('root');
+  ReactDOM.render(<App />, root);
+</script>
